@@ -7,6 +7,7 @@ import '../Styles/App.scss';
 import { actBeforeA, actBeforeB } from '../Tests/ActBeforeOnClick';
 import { replaceObservableOnClick } from '../Tests/ReplaceObservable';
 import { switchMapExample } from '../Tests/SwitchMap';
+import { FancyButton } from './FancyButton';
 
 export const App = () => {
 	useEffect(() => {
@@ -16,12 +17,25 @@ export const App = () => {
 		// so we specify 2nd argument as an empty dependency ([]) so useEffect
 		// will be called only once
 		// createAnCallObservable();
+		buttonRef.current && buttonRef.current.classList.toggle('blue');
 	}, []);
 
 	const msgRef = useRef<HTMLDivElement>(null);
-
+	const buttonRef = React.createRef<HTMLButtonElement>();
+	const handleClick = (
+		evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
+		const br = buttonRef.current;
+		if (br) {
+			br.classList.toggle('blue');
+			br.classList.toggle('green');
+		}
+	};
 	return (
 		<>
+			<FancyButton ref={buttonRef} onClick={handleClick}>
+				Click me!
+			</FancyButton>
 			<div className='App'>
 				<h4>Ajax Get Users, useObservable, subscribe, pipe, TypeScript... </h4>
 
