@@ -18,11 +18,11 @@ export const App = () => {
 		// will be called only once
 		// createAnCallObservable();
 		buttonRef.current && buttonRef.current.classList.toggle('blue');
-	}, []);
+	});
 
 	const msgRef = useRef<HTMLDivElement>(null);
 	const buttonRef = React.createRef<HTMLButtonElement>();
-	const handleClick = (
+	const buttonRefClick = (
 		evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
 	) => {
 		const br = buttonRef.current;
@@ -33,7 +33,7 @@ export const App = () => {
 	};
 	return (
 		<>
-			<FancyButton ref={buttonRef} onClick={handleClick}>
+			<FancyButton ref={buttonRef} onClick={buttonRefClick}>
 				Click me!
 			</FancyButton>
 			<div className='App'>
