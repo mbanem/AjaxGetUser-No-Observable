@@ -6,10 +6,10 @@ import '../Styles/FancyButton.scss';
 // At initialization the parent component toggle on of them so
 // the other become active. On click the parent toggle both classes
 // so the other one become active and that continue on subsequent clicks
-type ButtonProps = React.HTMLProps<HTMLButtonElement>;
-export const FancyButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
+type ButtonProps = React.HTMLProps<HTMLDivElement>;
+export const FancyButton = React.forwardRef<HTMLDivElement, ButtonProps>(
 	(props, buttonRef) => (
-		<button
+		<div
 			// this buttonRef is now attached to this DOM element button
 			// and the calling parent component now has access to the button
 			// via buttonRef.current
@@ -18,6 +18,6 @@ export const FancyButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			className='fancy-button green blue'
 		>
 			{props.children}
-		</button>
+		</div>
 	)
 );

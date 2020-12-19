@@ -21,9 +21,9 @@ export const App = () => {
 	});
 
 	const msgRef = useRef<HTMLDivElement>(null);
-	const buttonRef = React.createRef<HTMLButtonElement>();
+	const buttonRef = React.createRef<HTMLDivElement>();
 	const buttonRefClick = (
-		evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
+		evt: React.MouseEvent<HTMLDivElement, MouseEvent>
 	) => {
 		const br = buttonRef.current;
 		if (br) {

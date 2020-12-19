@@ -1,8 +1,9 @@
 .fancy-button {
     position: absolute;
-    top: .5rem;
-    left: calc(45vw - 75px);
+    top: -1rem;
+    left: 4rem; //calc(45vw - 75px);
     width: 150px;
+    padding: .2rem 0;
     text-align: center;
     border: 1px solid gray;
     border-radius: 8px;
@@ -10,17 +11,16 @@
     color: white;
     background-color: gray;
     &:hover {
-        // color: yellow;
+        font-style: italic;
         font-weight: bold;
+        box-shadow: 1px 4px 15px black;
     }
 }
 
 .green {
-    color: white;
     background-color: rgb(20, 163, 20);
 }
 
 .blue {
-    color: white;
     background-color: rgb(24, 24, 150);
 }
